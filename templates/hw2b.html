@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--specifies title of the page !-->
+        <title>Homework 2B</title>
+    <head>
+    <body>
+    
+    <h2>Homework 2B: Simulations</h2>
+    
+    <p>In Homework 2B, we simplified a real world problem with a model.  We 
+    wrote a module with a series of functions, then imported the module into a 
+    tester script to execute and test the program.</p>
+    
+    <p>Our aim was to simulate the position of a projectile launched straight 
+    up into the air, taking into account gravity’s variation with altitude.</p> 
+    
+    <p>We translated a series of equations into a sequence of Python functions, 
+    using intermediate outputs to iteratively compute the position after each 
+    time step, assuming that velocity is constant at each time step.  
+    <b>Python tips:</b> When simultaneous updating of variables is required 
+    (e.g. in an iteration of a loop), a useful method is to assign tuples of 
+    equations to tuples of variables (e.g. v1, v2 = function_1(v1, v2), 
+    function_2(v1, v2) ).  I also encountered a rounding error while looping 
+    that affected the results— the nature of the problem was that the time 
+    step was small enough such that at (for example) 2.99, the loop continued, 
+    updating to a new value for velocity, instead of rounding to 3 seconds, 
+    resulting in a large leap in values between 2 to 3 seconds.</p>
+    
+    <p>We plotted the simulation results, comparing them to the calculated 
+    position when acceleration due to gravity is assumed to be constant.  We 
+    showed that since gravity decreases with altitude, the object is shown to 
+    travel further away from Earth when the variation of gravity with altitude 
+    is accounted for. </p>
+    
+    <p>We saw that there were tradeoffs when it came to errors in the simulation.
+      As the time step decreased, the simulation accuracy increased, while the 
+      simulation accuracy decreased as the time step increased.  The longer the 
+      simulation ran, the more errors there were.</p>
+    </body>
+</html>

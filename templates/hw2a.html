@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--specifies title of the page !-->
+        <title>Homework 2A</title>
+    <head>
+    <body>
+    
+    <h2>Homework 2A: Evaluating algorithms (Time complexity)</h2>
+    <p> We learned to evaluate the performance of an algorithm given its 
+    efficiency in the worst case and average scenarios.  This is called the 
+    <b>time complexity</b> of an algorithm, and it is written in “Big O” notation.  
+    For example, O(n) describes an algorithm like sequential search in which 
+    there are n steps for n items; in the graph below it is represented the 
+    linear funcion n (in green).  Only largest value in the equation describing
+     an algorithm’s true worst case efficiency is represented in Big O notation
+      (e.g. n^2 + n = O(n^2)). <br>
+     <img src="/static/images/TimeComplexity.jpg" alt="Time_Complexity"><br>
+     y axis: the number of steps the algorithm requires<br>
+     x axis: the number of objects the algorithm is processing</p>
+     
+     <p>We covered various searching (binary search, sequential search) and 
+     sorting (selection sort, merge sort) algorithms.  When calculating time 
+     complexity, it is helpful to create a small example and manually complete 
+     a few iterations of the algorithm given the worst case scenario, and count
+      the steps.</p>
+     
+     <p><b>Sequential search</b> iterates through the entire group of objects, 
+     stopping if the desired element is found or the end is reached.  Since each
+      item is considered in the worst case scenario, it has n steps for n elements.
+       Sequential search = O(n)</p>
+       
+      <p><b>Binary search</b> starts in the middle of the group of objects, stops if 
+      the element is found, if the element is less than the current one, the 
+      group is split in half again with the current element being the end, and 
+      if the element is greater than the current one, the group is split in 
+      half again with the current element being the beginning.  Stop if the 
+      element can’t be found (can’t split in half anymore). Note that the group
+       must be sorted prior to binary search.<br>
+       In the worst case scenario, the group has been split in half until it 
+       can’t be split anymore since there is only one element left.  How many 
+       times can something be halved?  Or, in other words, how many times can 
+       something be doubled? <br>
+       2^x = n <br>
+       x = log<sub>2</sub>n<br>
+       Binary search = O(log<sub>2</sub>n) </p>
+       
+       <p><b>Selection sort</b> iterates through a group, picks the smallest element, 
+       and puts the element at the front of the group, then repeats the process 
+       on the unsorted elements until the end of the group is reached. <br>
+       Given the worst case scenario, that the initial list is sorted largest 
+       to smallest and takes the maximum number of steps to sort.  For N items,
+        it takes N steps to sort the first item, N-1 to sort the second item, 
+        N-2 for the third, and so on: N + (N-1) + (N-2)+ …. + 2 (until the last 
+        two items are left) = (n (n-1) ) / 2.  Since n^2 is the largest value 
+        in the equation, the time complexity of Selection sort = O(n^2).</p>
+        
+        <p><b>Merge sort</b> splits the group in half until only groups of two are 
+        being compared, makes the smallest element the first element of each 
+        pair.  Each sorted pair is compared to its neighboring pair, with the 
+        first elements being compared, and the smallest sorted to the front, 
+        then the second elements, yielding sorted arrays of 4 elements.  The 
+        next level of group is sorted (8, then 16, etc.) until the last step, 
+        which is merging two sorted arrays of N/2 elements to obtain a fully 
+        sorted array of N elements.<br>
+        Given a group with 8 elements:<br>
+        2, 2, 2, 2 = groups of 2 with two steps each to sort them<br>
+        4, 4 = groups of four with four steps each to sort them<br>
+        8 = the final, sorted group of 8 sorted with 8 steps <br>
+        Merge sort = O(n*logn)</p>
+        
+        <p><a href="http://visualgo.net/en/sorting"?>Visualizations</a> are 
+        available for a variety of searching and sorting algorithms.</p>
+        
+        <p>Homework 2A explored tradeoffs presented when choosing algorithms, 
+        emphasizing that algorithm efficiency is not the only variable worth 
+        considering: other factors are important, such as the time it takes to 
+        write the code to implement the algorithm and the usage (e.g. group size
+         and the number of searches).  We quantified some of these tradeoffs, 
+         calculating the number of searches it would take for Merge Sort + Binary 
+         Search to be more efficient than Sequential Search.</p>
+    
+    </body>
+</html>
